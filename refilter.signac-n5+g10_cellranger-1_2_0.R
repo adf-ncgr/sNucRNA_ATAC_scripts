@@ -281,8 +281,9 @@ atac_combined <- RenameIdents(object = atac_combined,
 't19_20' = '20',
 'u15_21' = '21'
 )
-atac_combined[['seurat_clusters_renamed_again']] <- Idents(object = atac_combined)
+atac_combined[['seurat_clusters_renamed']] <- Idents(object = atac_combined)
+saveRDS(atac_combined, "refilter.atac_combined.final_cluster_naming.RDS")
 pdf("fragmenthist.all.predicted.id.colors.pdf",width=14)
-#FragmentHistogram(object = atac_combined, group.by = 'seurat_clusters_renamed_again', region=c("1-1-30427671","2-1-19698289","3-1-23459830","4-1-18585056","5-1-26975502"))+scale_fill_manual(values=c('#5B9BD5', '#296AB5', '#09C8F7', '#10E858', '#6DBE13', '#96F125', '#008E06', '#003899', '#747474', '#4A4A4A', '#8E5D0C', '#5F5FE8', '#AC8CD7', '#F1A3B5', '#E6CFD4', '#FF33CC', '#B31C46', '#F4C8A1', '#FB8E01', '#BE9146', '#FA5A0F'))+NoLegend()
-FragmentHistogram(object = atac_combined, group.by = 'seurat_clusters_renamed_again', region=c("1-1-30427671","2-1-19698289","3-1-23459830","4-1-18585056","5-1-26975502"))+scale_fill_manual(values=c('#5B9BD5', '#296AB5', '#09C8F7', '#10E858', '#6DBE13', '#96F125', '#008E06', '#747474', '#4A4A4A', '#8E5D0C', '#5F5FE8', '#AC8CD7', '#F1A3B5', '#E6CFD4', '#FF33CC', '#B31C46', '#F4C8A1', '#FB8E01', '#BE9146', '#FA5A0F', '#BB4918'))+NoLegend()
+#FragmentHistogram(object = atac_combined, group.by = 'seurat_clusters_renamed', region=c("1-1-30427671","2-1-19698289","3-1-23459830","4-1-18585056","5-1-26975502"))+scale_fill_manual(values=c('#5B9BD5', '#296AB5', '#09C8F7', '#10E858', '#6DBE13', '#96F125', '#008E06', '#003899', '#747474', '#4A4A4A', '#8E5D0C', '#5F5FE8', '#AC8CD7', '#F1A3B5', '#E6CFD4', '#FF33CC', '#B31C46', '#F4C8A1', '#FB8E01', '#BE9146', '#FA5A0F'))+NoLegend()
+FragmentHistogram(object = atac_combined, group.by = 'seurat_clusters_renamed', region=c("1-1-30427671","2-1-19698289","3-1-23459830","4-1-18585056","5-1-26975502"))+scale_fill_manual(values=c('#5B9BD5', '#296AB5', '#09C8F7', '#10E858', '#6DBE13', '#96F125', '#008E06', '#747474', '#4A4A4A', '#8E5D0C', '#5F5FE8', '#AC8CD7', '#F1A3B5', '#E6CFD4', '#FF33CC', '#B31C46', '#F4C8A1', '#FB8E01', '#BE9146', '#FA5A0F', '#BB4918'))+NoLegend()
 dev.off()
